@@ -1,6 +1,16 @@
+import { useState } from "react";
 import "./movie.css";
 
 export default function App() {
+
+const [isSelected, setIsSelected] = useState(false);
+
+function clickSelect () {
+  setIsSelected((prev) => !prev);
+}
+
+const className = isSelected ? "seat selected" : "seat";
+
   return (
     <>
       <div className="movie-container">
@@ -32,6 +42,7 @@ export default function App() {
         <div className="screen" />
 
         <div className="row">
+          <div className={className} onClick={clickSelect}/>
           <div className="seat" />
           <div className="seat" />
           <div className="seat" />
@@ -39,7 +50,28 @@ export default function App() {
           <div className="seat" />
           <div className="seat" />
           <div className="seat" />
+        </div>
+
+        <div className="row">
           <div className="seat" />
+          <div className="seat" />
+          <div className="seat" />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
+          <div className="seat" />
+          <div className="seat" />
+          <div className="seat" />
+        </div>
+
+        <div className="row">
+          <div className="seat" />
+          <div className="seat" />
+          <div className="seat" />
+          <div className="seat" />
+          <div className="seat" />
+          <div className="seat" />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
         </div>
 
         <div className="row">
@@ -57,19 +89,8 @@ export default function App() {
           <div className="seat" />
           <div className="seat" />
           <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-        </div>
-
-        <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
           <div className="seat" />
           <div className="seat" />
           <div className="seat" />
@@ -80,20 +101,9 @@ export default function App() {
           <div className="seat" />
           <div className="seat" />
           <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-        </div>
-
-        <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
           <div className="seat" />
         </div>
       </div>
