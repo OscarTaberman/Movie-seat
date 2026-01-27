@@ -1,6 +1,21 @@
+import { useState } from "react";
 import "./movie.css";
 
 export default function App() {
+
+  function Seat() {
+    const [isSelected, setIsSelected] = useState(false);
+
+    function clickSelect() {
+      setIsSelected(!isSelected);
+    }
+
+    const switchClass = isSelected ? "seat selected" : "seat";
+
+    return (
+      <div className={switchClass} onClick={clickSelect} />);
+  }
+
   return (
     <>
       <div className="movie-container">
@@ -32,69 +47,69 @@ export default function App() {
         <div className="screen" />
 
         <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
         </div>
 
         <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <Seat />
+          <Seat />
+          <Seat />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
+          <Seat />
+          <Seat />
+          <Seat />
         </div>
 
         <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
         </div>
 
         <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
         </div>
 
         <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <Seat />
+          <Seat />
+          <Seat />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
+          <Seat />
+          <Seat />
+          <Seat />
         </div>
 
         <div className="row">
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
-          <div className="seat" />
+          <Seat />
+          <Seat />
+          <Seat />
+          <Seat />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
+          <div className="seat occupied" />
+          <Seat />
         </div>
       </div>
 
