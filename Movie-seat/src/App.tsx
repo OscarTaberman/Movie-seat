@@ -10,7 +10,7 @@ export default function App() {
       setIsSelected(!isSelected);
     }
 
-    let switchClass = isSelected ? "seat selected" : "seat";
+    const switchClass = isSelected ? "seat selected" : "seat";
 
     return (
       <div className={switchClass} onClick={clickSelect} />);
