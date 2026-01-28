@@ -1,20 +1,9 @@
-import { useState } from "react";
+import Seat from "./components/Seat";
 import "./movie.css";
 
 export default function App() {
 
-  function Seat() {
-    const [isSelected, setIsSelected] = useState(false);
-
-    function clickSelect() {
-      setIsSelected(!isSelected);
-    }
-
-    const switchClass = isSelected ? "seat selected" : "seat";
-
-    return (
-      <div className={switchClass} onClick={clickSelect} />);
-  }
+  
 
   return (
     <>
