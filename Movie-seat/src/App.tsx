@@ -3,8 +3,6 @@ import "./movie.css";
 
 export default function App() {
 
-  
-
   return (
     <>
       <div className="movie-container">
