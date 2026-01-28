@@ -1,4 +1,5 @@
 import Seat from "./components/Seat";
+import Price from "./components/Price";
 import "./movie.css";
 
 export default function App() {
