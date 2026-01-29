@@ -1,14 +1,23 @@
+import { useState } from "react";
 import Seat from "./components/Seat";
 import Price from "./components/Price";
 import "./movie.css";
 
 export default function App() {
 
+  const [moviePrice, setMoviePrice] = useState(100);
+
+  function movieChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    setMoviePrice(Number(event.target.value));
+  }
+
+  <Price moviePrice = {moviePrice} />
+
   return (
     <>
       <div className="movie-container">
         <label htmlFor="movie">Pick a movie:</label>
-        <select name="movie" id="movie" defaultValue="100">
+        <select name="movie" id="movie" value={moviePrice} onChange={movieChange}>
           <option value="100">Fast and furious 6 (100 kr)</option>
           <option value="50">The mummy returns (50 kr)</option>
           <option value="70">Jumanji: Welcome to the Jungle (70 kr)</option>
