@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "Fast and furious 6",
+    "Year": "2013",
+    "Price": 100,
+    "Poster": "https://i-viaplay-com.akamaized.net/viaplay-prod/560/16/1472660212-137d9bccb1fe031606e0a3133e0fb0e2a838eca8.jpg?width=400&height=600"
+  },
+  {
+    "Title": "The mummy returns",
+    "Year": "2001",
+    "Price": 50,
+    "Poster": "https://m.media-amazon.com/images/S/pv-target-images/96c0bc071f0e8498aa431f233019b8176bdd4816e7eb27bdeb27fa05bc59fa74.jpg"
+  },
+  {
+    "Title": "Jumanji: Welcome to the Jungle",
+    "Year": "2017",
+    "Price": 70,
+    "Poster": "https://static.wikia.nocookie.net/jumanji/images/1/1b/Jumanji_2017_Poster.jpg/revision/latest/scale-to-width-down/1000?cb=20181023182751"
+  },
+  {
+    "Title": "Rampage",
+    "Year": "2018",
+    "Price": 40,
+    "Poster": "https://static.wikia.nocookie.net/moviedatabase/images/f/f4/Rampage.jpg/revision/latest?cb=20180627193454"
+  }
+]
