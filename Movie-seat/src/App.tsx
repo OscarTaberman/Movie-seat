@@ -9,11 +9,17 @@ export default function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
-  const [moviePrice, setMoviePrice] = useState(0);
+  useEffect(() => {
+    const loadMovies = async () => {
+      const response = await fetch("http://localhost:3001/Movies");
+      const data = (await response.json()) as Movie[];
 
-  function movieChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    setMoviePrice(Number(event.target.value));
-  }
+      setMovies(data);
+      setSelectedMovie(data[0] ?? null);
+    };
+
+    loadMovies();
+  }, []);
 
   const [seatIds, setSeatIds] = useState<number[]>([]);
 
@@ -28,17 +34,24 @@ export default function App() {
   }
 
   const selectedCount = seatIds.length;
+  const moviePrice = selectedMovie?.price ?? 0;
   const totalPrice = selectedCount * moviePrice;
 
   return (
     <>
       <div className="movie-container">
         <label htmlFor="movie">Pick a movie:</label>
-        <select name="movie" id="movie" value={moviePrice} onChange={movieChange}>
-          <option value="100">Fast and furious 6 (100 kr)</option>
-          <option value="50">The mummy returns (50 kr)</option>
-          <option value="70">Jumanji: Welcome to the Jungle (70 kr)</option>
-          <option value="40">Rampage (40 kr)</option>
+        <select value={selectedMovie?.id ?? ""}
+          onChange={(e) => {
+            const movie =
+              movies.find((m) => m.id === Number(e.target.value)) ?? null;
+            setSelectedMovie(movie);
+          }}>
+          {movies.map((movie) => (
+            <option key={movie.id} value={movie.id}>
+              {movie.title} ({movie.year}) – {movie.price} kr
+            </option>
+          ))}
         </select>
       </div>
 
