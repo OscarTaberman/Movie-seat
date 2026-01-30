@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Seat from "./components/Seat";
+import moviesData from "./components/Movies.json";
+import type { Movie } from "./components/Movies";
 import "./movie.css";
 
 
