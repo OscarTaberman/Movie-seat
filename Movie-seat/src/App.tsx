@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Seat from "./components/Seat";
-import moviesData from "./components/Movies.json";
 import type { Movie } from "./components/Movies";
 import "./movie.css";
 
 
 export default function App() {
+
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
   const [moviePrice, setMoviePrice] = useState(0);
 

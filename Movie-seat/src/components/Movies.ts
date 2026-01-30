@@ -1,7 +1,8 @@
 
 export type Movie = {
-  Title: string;
-  Year: string;
-  Price: number;
-  Poster: string;
+    id: number;
+    title: string;
+    year: string;
+    price: number;
+    poster: string;
 };
